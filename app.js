@@ -5,9 +5,12 @@ var bodyParser =require('body-parser');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname));
 
-var route=require('./Controller/Routes/route'); 
+console.log(__dirname);
+
+var route=require('./Controller/routes/route'); 
 app.use(route);
 
 app.listen(3000,()=>{
     console.log("Server is listening on port:3000");
 })
+
