@@ -34,4 +34,28 @@ app.post('/question1insert',function(req,res){
     })
 })
 
+//QUESTION TWO
+app.get('/question2',function(req,res){
+    console.log("Question 2");
+    res.sendFile('Question2.html',{root:'../MySQL_assignment/views'});
+})
+
+app.post('/question2insert',function(req,res){
+    console.log('Question 2 inserted');
+    var lname=req.body.Login_name;
+    var pwd=req.body.Pwd;
+    var email=req.body.Email;
+        connection.query('insert into Account_Information values(?,?,?)',[lname,pwd,email],(err,results)=>{
+            if(err) throw err;
+            if(results){
+            console.log("Values Inserted");
+            res.sendFile('Valuesinserted.html',{root:'../MySQL_assignment/views'})
+            }
+            else{
+                res.sendFile('Question2.html',{root:'../MySQL_assignment/views'});
+            }
+        })
+    })
+
+
 module.exports=app;

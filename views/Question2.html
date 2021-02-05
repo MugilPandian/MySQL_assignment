@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit=" return validate()" action="/question2insert" method="POST">
+        <table>
+            <tr>
+                <td class="sub1">
+                    <label for="Name">Login Name*</label>
+                </td>
+                <td>
+                    <input type="text" name="Login_name" id="Lname">
+                </td>
+            </tr>
+            <tr>
+                <td class="sub1">
+                    <label for="Pwd">Password*</label>
+                </td>
+                <td>
+                    <input type="password" name="Pwd" id="Pwd">
+                </td>
+            </tr>
+            <tr>
+                <td class="sub1">
+                    <label for="RPwd">Confirm Password*</label>
+                </td>
+                <td>
+                    <input type="password" name="CPwd" id="CPwd">
+                </td>
+            </tr>
+            <tr>
+                <td class="sub1">
+                    <label for="Email">Email Address*</label>
+                </td>
+                <td>
+                    <input type="text" name="Email" id="Email">
+                </td>
+            </tr>
+            <tr>
+                <td class="sub1">
+                    <label for="REmail">Confirm Email*</label>
+                </td>
+                <td>
+                    <input type="text" name="CEmail" id="CEmail">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit">
+                </td>
+                <td>
+                    <input type="reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script src="../public/js/Question2.js"></script>
+</body>
+</html>

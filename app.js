@@ -5,8 +5,6 @@ var bodyParser =require('body-parser');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname));
 
-console.log(__dirname);
-
 var route=require('./Controller/routes/route'); 
 app.use(route);
 
