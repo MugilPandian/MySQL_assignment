@@ -67,7 +67,7 @@ app.post('/question3insert',function(req,res){
     console.log('Question 3 inserted');
     var fname=req.body.Fname;
     var lname=req.body.Lname;
-    var add=req.body.Add1;
+    var add=req.body.Add1+req.body.Add2;
     var city=req.body.City;
     var state=req.body.State;
     var zip=req.body.Zip;
