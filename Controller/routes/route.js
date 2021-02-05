@@ -55,7 +55,33 @@ app.post('/question2insert',function(req,res){
                 res.sendFile('Question2.html',{root:'../MySQL_assignment/views'});
             }
         })
-    })
+})
 
+//QUESTION3
+app.get('/question3',function(req,res){
+    console.log("Question 3");
+    res.sendFile('Question3.html',{root:'../MySQL_assignment/views'});
+})
 
+app.post('/question3insert',function(req,res){
+    console.log('Question 3 inserted');
+    var fname=req.body.Fname;
+    var lname=req.body.Lname;
+    var add=req.body.Add1;
+    var city=req.body.City;
+    var state=req.body.State;
+    var zip=req.body.Zip;
+    var country=req.body.Country;
+    var gender=req.body.Gender;
+        connection.query('insert into contact_information values(?,?,?,?,?,?,?,?)',[fname,lname,add,city,state,zip,country,gender],(err,results)=>{
+            if(err) throw err;
+            if(results){
+            console.log("Values Inserted");
+            res.sendFile('Valuesinserted.html',{root:'../MySQL_assignment/views'})
+            }
+            else{
+                res.sendFile('Question3.html',{root:'../MySQL_assignment/views'});
+            }
+        })
+})
 module.exports=app;
